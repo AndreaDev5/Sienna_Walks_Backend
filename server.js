@@ -1,27 +1,37 @@
 /* ------ 📦 Dependencias Necesarias 📦 ------ */
 
 // --> 🚀 Framework de Servidor Express 🚀 <--
-import express from "express"; // Framework de servidor
-import cors from "cors"; // Middleware para habilitar CORS
-import http from "http"; // Para manejar las funcionalidades HTTP
-import { config } from "dotenv"; // Para manejar variables de entorno
+
+import express from "express"; 
+import cors from "cors";
+import http from "http"; 
+import { config } from "dotenv"; 
+import conectarDB from './src/config/siennadb.js';
 
 // * ------ ⚙️ Configuración del Entorno ⚙️ ------ *
-config(); // Cargar variables de entorno
-const PORT = process.env.PORT || 3000; // Puerto del servidor
+
+config(); 
+const PORT = process.env.PORT || 3000; 
 
 // * ------ 🏁 Inicialización del Servidor Express 🏁 ------ *
-const app = express(); // Crear instancia de Express
-app.use(cors()); // Habilitar CORS
-app.use(express.json()); // Permitir recibir datos en formato JSON
+
+const app = express(); 
+app.use(cors()); 
+app.use(express.json()); 
+
+// * ------ 🔀 Conexión a la Base de Datos 🔀 ------ *
+
+conectarDB(); 
 
 // * ------ 🔀 Definición de Rutas 🔀 ------ *
+
 app.get("/", (req, res) => {
-    res.send("¡Servidor en funcionamiento!"); // Respuesta básica
+    res.send("¡Servidor en funcionamiento!"); 
 });
 
 // * ------ 🎧 Inicialización del Servidor HTTP 🎧 ------ *
-const server = http.createServer(app); // Crear servidor HTTP
+
+const server = http.createServer(app); 
 
 server.listen(PORT, () => {
     console.log(`🚀 Servidor corriendo en el puerto ${PORT} 🚀`);

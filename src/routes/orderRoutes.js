@@ -1,11 +1,13 @@
-import { Router } from 'express';
+import { Router } from 'express'; 
 
-const router = Router();
+const router = Router(); 
 
+// * ------ 🔐 Ruta de Login 🔐 ------ *
 
 router.post('/login', (req, res) => {
-res.json({ message: 'Autenticación exitosa' });
+    res.json({ message: 'Autenticación exitosa' });
 });
 
-export default router;
+// * ------ 📤 Exportar el Router 📤 ------ *
 
+export default router; 
