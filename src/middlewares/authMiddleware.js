@@ -1,4 +1,6 @@
 import jwt from "jsonwebtoken"; 
+
+
 export const autentificacionRequerida = (req, res, next) => {
     // Extrae el token de las cookies de la solicitud.
     const { token } = req.cookies;

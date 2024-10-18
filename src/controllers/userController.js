@@ -4,9 +4,13 @@ import jwt from 'jsonwebtoken';
 
 // Registro de usuarios
 export const registrar = async (req, res) => {
-    const { nombre, apellido, email, password, celular } = req.body;
+    const { nombre, apellido, email, password, celular, direccionEnvio } = req.body;
 
     try {
+        //Verificar que el correo no tenga otra cuenta
+        const usuarioEncontrado = await User.findOne({email})
+        if (usuarioEncontrado) return res.status(400).json(["El email registrado ya existe"]);
+        
         // Encriptar contraseña
         const hash = await bcrypt.hash(password, 10);
 
@@ -15,7 +19,8 @@ export const registrar = async (req, res) => {
             apellido,
             email,
             password: hash,
-            celular
+            celular,
+            direccionEnvio
         });
 
         // Guardar el usuario
@@ -119,3 +124,23 @@ export const perfil = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+//Verificación del token para rutas protegidas
+
+export const verify = async (req,res) =>{
+    const {token} = req.cookies
+   
+    if (!token) return res.status(401).json({message: "No autorizado"});
+    jwt.verify(token, "secret123", async (err, user) => {
+      if (err) return res.status(401).json({message: "No autorizado"});
+   
+      const usuarioEncontrado = await User.findById(user.id)
+      if(!usuarioEncontrado) return res.status(401).json({message: "No autorizado"});
+
+      return res.json({
+        id: usuarioEncontrado._id,
+        nombre: usuarioEncontrado.nombre,
+        email: usuarioEncontrado.email,
+      })
+    })
+}

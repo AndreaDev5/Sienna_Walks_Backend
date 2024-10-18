@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { registrar, login, salir, perfil } from "../controllers/userController.js";
 import { autentificacionRequerida } from "../middlewares/authMiddleware.js";
-import { validacionEsquemas } from "../utils/validation.js";
+import {validacionEsquemas} from "../middlewares/validation.Middlewars.js"
 import { esquemaLogin, esquemaRegistro } from "../utils/validationauth.js";
 
 const router = Router();
@@ -11,5 +11,6 @@ router.post('/registrar', validacionEsquemas(esquemaRegistro), registrar);
 router.post('/login', validacionEsquemas(esquemaLogin), login);
 router.post('/logout', salir);
 router.get('/perfil', autentificacionRequerida, perfil);
+router.post('/perfil', autentificacionRequerida, perfil)
 
 export default router;

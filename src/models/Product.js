@@ -21,7 +21,7 @@ const productSchema = new mongoose.Schema({
         required: [true, "La categoría es requerida"], 
     },
     talla: {
-        type: String,
+        type: Number,
         required: [true, "La talla es requerida"], 
     },
     color: {
@@ -35,13 +35,13 @@ const productSchema = new mongoose.Schema({
     imagen: {
         type: String,
         required: [true, "La imagen es requerida"], 
-        validate: {
+        /*validate: {
         validator: function(v) {
                 // 🌐 Validar que la imagen sea una URL válida
                 return /^(ftp|http|https):\/\/[^ "]+$/.test(v); 
             },
             message: props => `${props.value} no es una URL válida!` 
-        },
+        },*/
     },
 }, { timestamps: true }); 
 

@@ -30,6 +30,7 @@ const userSchema = new mongoose.Schema(
     },
     direccionEnvio: {
         type: String, 
+        required: [true, "La dirección es requerida"],
     },
     rol: {
         type: String,
