@@ -3,39 +3,42 @@ import { z } from 'zod'; // 📦 Importar Zod para la validación de esquemas
 
 // * ------ 📋 Esquema de Registro de Usuario 📋 ------ *
 
-export const esquemaRegistro = z.object({
-    nombre: z.string({ 
-        required_error: "Nombre requerido" 
+export const schemaRegistry = z.object({
+    name: z.string({ 
+        required_error: "The name is required" 
     }),
-    apellido: z.string({ 
-        required_error: "Apellido requerido" 
+    lastname: z.string({ 
+        required_error: "The lastname is required" 
     }),
     email: z.string({ 
-        required_error: "Correo requerido" 
+        required_error: "The email is required" 
     }).email({ 
-        message: "Correo inválido", 
+        message: "Invalid email", 
     }),
     password: z.string({ 
-        required_error: "Contraseña requerida" 
+        required_error: "The password is required" 
     }).min(6, { 
-        message: "Contraseña debe ser mayor a 6 caracteres" 
+        message: "Password must be greater than 6 characters" 
     }),
-    celular: z.string({ 
-        required_error: "Celular requerido" 
+    cellphone: z.string({ 
+        required_error: "The cellphone is required" 
+    }),
+    address: z.string({ 
+        required_error: "The address is required" 
     }),
 });
 
 // * ------ 📋 Esquema de Inicio de Sesión de Usuario 📋 ------ *
 
-export const esquemaLogin = z.object({
+export const schemaLogin = z.object({
     email: z.string({ 
-        required_error: "Correo requerido" 
+        required_error: "The email is required" 
     }).email({ 
-        message: "Correo inválido", 
+        message: "Invalid email", 
     }),
     password: z.string({ 
-        required_error: "Contraseña requerida" 
+        required_error: "The password is required" 
     }).min(6, { 
-        message: "Contraseña debe ser mayor a 6 caracteres" 
+        message: "Password must be greater than 6 characters" 
     }),
 });

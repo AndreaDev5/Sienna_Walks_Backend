@@ -3,38 +3,34 @@ import mongoose from "mongoose";
 // * ------ 📦 Definición del Esquema del Producto 📦 ------ *
 
 const productSchema = new mongoose.Schema({
-    nombre: {
+    name: {
         type: String,
-        required: [true, "El nombre es requerido"], 
+        required: [true, "The name is required"], 
     },
-    descripcion: {
+    description: {
         type: String,
-        required: [true, "La descripción es requerida"], 
+        required: [true, "The description is required"], 
     },
-    precio: {
+    price: {
         type: Number,
-        required: [true, "El precio es requerido"], 
-        min: [0, "El precio no puede ser negativo"], 
+        required: [true, "The price is required"], 
+        min: [0, "The price cannot be negative"], 
     },
-    categoria: {
+    category: {
         type: String,
-        required: [true, "La categoría es requerida"], 
+        required: [true, "The category is required"], 
     },
-    talla: {
+    size: {
         type: Number,
-        required: [true, "La talla es requerida"], 
+        required: [true, "The size is required"], 
     },
     color: {
         type: String,
-        required: [true, "El color es requerido"], 
+        required: [true, "The color is required"], 
     },
-    direccion: {
+    image: {
         type: String,
-        required: [true, "La dirección es requerida"],
-    },
-    imagen: {
-        type: String,
-        required: [true, "La imagen es requerida"], 
+        required: [true, "The image is required"], 
         /*validate: {
         validator: function(v) {
                 // 🌐 Validar que la imagen sea una URL válida

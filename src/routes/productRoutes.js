@@ -1,27 +1,27 @@
 import { Router } from 'express';
 import {
+    updateProduct,
     createProduct,
-    deleteProducto,
     getProduct,
-    updateProducto,
+    deleteProduct
   } from "../controllers/productController.js";
-  import {validacionEsquemas} from "../middlewares/validation.Middlewars.js"
-import { esquemaProducto } from '../utils/validationproduct.js';
-import {autentificacionRequerida} from '../middlewares/authMiddleware.js'
+  import {validationSchemas} from "../middlewares/validation.Middlewars.js"
+import { schemaProduct } from '../utils/validationproduct.js';
+import {authRequired} from '../middlewares/authMiddleware.js'
 import { upload } from '../middlewares/multerMiddlewares.js';
 
 
 const router = Router();
 //Rutas para el crud de los productos
-router.get("/productos", autentificacionRequerida, getProduct);
+router.get("/products", authRequired, getProduct);
 
-router.post("/productos", autentificacionRequerida, upload.single('imagen'), validacionEsquemas(esquemaProducto), createProduct);
+router.post("/products", authRequired, upload.single('imagen'), validationSchemas(schemaProduct), createProduct);
 
-router.get("/productos/:id", autentificacionRequerida, getProduct);
+router.get("/products/:id", authRequired, getProduct);
 
-router.put("/productos/:id", autentificacionRequerida,upload.single('imagen'), updateProducto);
+router.put("/products/:id", authRequired,upload.single('imagen'), updateProduct);
 
-router.delete("/productos/:id", autentificacionRequerida, deleteProducto);
+router.delete("/products/:id", authRequired, deleteProduct);
 
 
 export default router;

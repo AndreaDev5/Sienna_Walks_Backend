@@ -3,77 +3,104 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 // Registro de usuarios
-export const registrar = async (req, res) => {
-    const { nombre, apellido, email, password, celular, direccionEnvio } = req.body;
+export const registerUsers = async (req, res) => {
+    const { name, lastname, email, password, cellphone, address } = req.body;
 
     try {
         //Verificar que el correo no tenga otra cuenta
-        const usuarioEncontrado = await User.findOne({email})
-        if (usuarioEncontrado) return res.status(400).json(["El email registrado ya existe"]);
+        const userFound = await User.findOne({email})
+        if (userFound) return res.status(400).json(["The registered email already exists"]);
         
         // Encriptar contraseña
         const hash = await bcrypt.hash(password, 10);
 
         const newUsuario = new User({
-            nombre,
-            apellido,
+            name,
+            lastname,
             email,
             password: hash,
-            celular,
-            direccionEnvio
+            cellphone,
+            address,
+            image: req.file.filename,
         });
 
         // Guardar el usuario
-        const usuarioGuardado = await newUsuario.save();
-
-        // Generar token
-        const token = await new Promise((resolve, reject) => {
-            jwt.sign(
-                { id: usuarioGuardado._id },
-                process.env.JWT_SECRET || "secret123",
-                { expiresIn: "1d" },
-                (err, token) => {
-                    if (err) reject(err);
-                    resolve(token);
-                }
-            );
-        });
-
-        // Configurar cookie
-        res.cookie('token', token, { httpOnly: true });
+        const userSaved = await newUsuario.save();
 
         // Respuesta JSON
         res.json({
-            id: usuarioGuardado._id,
-            nombre: usuarioGuardado.nombre,
-            email: usuarioGuardado.email,
-            createdAt: usuarioGuardado.createdAt,
-            updatedAt: usuarioGuardado.updatedAt
+            id: userSaved._id,
+            name: userSaved.name,
+            email: userSaved.email,
+            createdAt: userSaved.createdAt,
+            updatedAt: userSaved.updatedAt
         });
 
-        console.log("Registrado", newUsuario);
+        console.log("Register", newUsuario);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 };
 
+//Obtención de usuarios
+export const getUsers = async (req, res) => {
+    try {
+      //Almacena los id
+      const {id} = req.params
+      //Busca los usuarios de acuerdo al id y da una respuesta
+      const users = (id === undefined) ? await User.find() : await User.findById(id)
+      return res.status(200).json({status:true, data: users})
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  };
+
+//Actualizar usuarios
+export const updateUsers = async (req, res) => {
+ 
+    const {id} = req.params
+    //Se obtienen los datos de acuerdo al id
+    const updatedata = ({
+      name: req.body.name, 
+      lastname : req.body.lastname,  
+      email: req.body.email, 
+      password: req.body.password, 
+      cellphone: req.body.cellphone, 
+      address: req.body.address,
+      image: req.file ? req.file.filename : undefined
+    })
+    try {
+        //Busca nuevamente el id y pasa los datos para actualizarlos
+      const updateusers = await User.findByIdAndUpdate(id, updatedata, { new: true });
+      if (!updateusers  ) {
+          return res.status(404).json({ message: 'User not found' });
+      }
+  
+       res.json(updateusers );
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  };
+  
+
+
 // Login de usuarios
-export const login = async (req, res) => {
+export const loginUsers = async (req, res) => {
     const { email, password } = req.body;
 
     try {
         // Buscar usuario por email
-        const usuarioEncontrado = await User.findOne({ email });
-        if (!usuarioEncontrado) return res.status(400).json({ message: "Usuario no encontrado" });
+        const userFound = await User.findOne({ email });
+        if (!userFound) return res.status(400).json({ message: "User not found" });
 
         // Comparar contraseñas
-        const verificacion = await bcrypt.compare(password, usuarioEncontrado.password);
-        if (!verificacion) return res.status(400).json({ message: "Contraseña incorrecta" });
+        const verification = await bcrypt.compare(password, userFound.password);
+        if (!verification) return res.status(400).json({ message: "Wrong password" });
 
         // Generar token
         const token = await new Promise((resolve, reject) => {
             jwt.sign(
-                { id: usuarioEncontrado._id },
+                { id: userFound._id },
                 process.env.JWT_SECRET || "secret123",
                 { expiresIn: "1d" },
                 (err, token) => {
@@ -88,37 +115,38 @@ export const login = async (req, res) => {
 
         // Respuesta JSON
         res.json({
-            id: usuarioEncontrado._id,
-            nombre: usuarioEncontrado.nombre,
-            email: usuarioEncontrado.email,
-            createdAt: usuarioEncontrado.createdAt,
-            updatedAt: usuarioEncontrado.updatedAt
+            token: token,
+            id: userFound._id,
+            name: userFound.name,
+            email: userFound.email,
+            createdAt: userFound.createdAt,
+            updatedAt: userFound.updatedAt
         });
 
-        console.log("Inicio de sesión correcto");
+        console.log("Successful login");
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 };
 
 // Cerrar sesión
-export const salir = (req, res) => {
+export const logoutUsers = (req, res) => {
     res.cookie('token', "", { expires: new Date(0), httpOnly: true });
     return res.sendStatus(200);
 };
 
 // Perfil de usuario
-export const perfil = async (req, res) => {
+export const profileUsers = async (req, res) => {
     try {
-        const usuarioEncontrado = await User.findById(req.user.id);
-        if (!usuarioEncontrado) return res.status(400).json({ message: "Usuario no encontrado" });
+        const userFound = await User.findById(req.user.id);
+        if (!userFound) return res.status(400).json({ message: "User not found" });
 
         return res.json({
-            id: usuarioEncontrado._id,
-            nombre: usuarioEncontrado.nombre,
-            email: usuarioEncontrado.email,
-            createdAt: usuarioEncontrado.createdAt,
-            updatedAt: usuarioEncontrado.updatedAt
+            id: userFound._id,
+            name: userFound.name,
+            email: userFound.email,
+            createdAt: userFound.createdAt,
+            updatedAt: userFound.updatedAt
         });
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -127,20 +155,20 @@ export const perfil = async (req, res) => {
 
 //Verificación del token para rutas protegidas
 
-export const verify = async (req,res) =>{
+export const verifyUsers = async (req,res) =>{
     const {token} = req.cookies
    
-    if (!token) return res.status(401).json({message: "No autorizado"});
+    if (!token) return res.status(401).json({message: "unauthorized"});
     jwt.verify(token, "secret123", async (err, user) => {
-      if (err) return res.status(401).json({message: "No autorizado"});
+      if (err) return res.status(401).json({message: "unauthorized"});
    
-      const usuarioEncontrado = await User.findById(user.id)
-      if(!usuarioEncontrado) return res.status(401).json({message: "No autorizado"});
+      const userFound = await User.findById(user.id)
+      if(!userFound) return res.status(401).json({message: "unauthorized"});
 
       return res.json({
-        id: usuarioEncontrado._id,
-        nombre: usuarioEncontrado.nombre,
-        email: usuarioEncontrado.email,
+        id: userFound._id,
+        name: userFound.name,
+        email: userFound.email,
       })
     })
 }

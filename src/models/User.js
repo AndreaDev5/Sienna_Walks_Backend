@@ -7,36 +7,42 @@ import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema(
 {
-    nombre: {
+    name: {
         type: String,
-        required: [true, "El nombre es requerido"],
+        required: [true, "The name is required"],
     },
-    apellido: {
+    lastname: {
         type: String,
-        required: [true, "El apellido es requerido"],
+        required: [true, "The lastname is required"],
     },
     email: {
         type: String,
-        required: [true, "El correo electrónico es requerido"],
+        required: [true, "The email is required"],
         unique: true,
     },
     password: {
         type: String,
-        required: [true, "La contraseña es requerida"],
+        required: [true, "The password is required"],
     },
-    celular: {
+    cellphone: {
         type: String,
-        required: [true, "El número de celular es requerido"],
+        required: [true, "The cellphone is required"],
     },
-    direccionEnvio: {
+    address: {
         type: String, 
-        required: [true, "La dirección es requerida"],
+        required: [true, "The address is required"],
     },
-    rol: {
-        type: String,
-        enum: ["usuario", "admin"],
-        default: "usuario", 
-    },
+    image: {
+        type: String
+
+       // validate: {
+       // validator: function(v) {
+                // 🌐 Validar que la imagen sea una URL válida
+        //        return /^(ftp|http|https):\/\/[^ "]+$/.test(v); 
+        //    },
+        //    message: props => `${props.value} no es una URL válida!` 
+       // },
+    }
 },
 { timestamps: true }
 );

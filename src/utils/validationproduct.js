@@ -3,24 +3,24 @@ import { z } from 'zod'; // 📦 Importar Zod para la validación de esquemas
 
 // * ------ 📋 Esquema de Registro de Productos 📋 ------ *
 
-export const esquemaProducto = z.object({
-    nombre: z.string({ 
-        required_error: "Nombre requerido" 
+export const schemaProduct = z.object({
+    name: z.string({ 
+        required_error: "The name is required" 
     }),
-    descripcion: z.string({ 
-        required_error: "Descripción requerida" 
+    description: z.string({ 
+        required_error: "The description is required" 
     }),
-    precio: z.string({ 
-        required_error: "Precio requerido" 
+    price: z.string({ 
+        required_error: "The price is required" 
     }),
-    categoria: z.string({ 
-        required_error: "Categoria requerida" 
+    category: z.string({ 
+        required_error: "The category is required" 
     }),
-    talla: z.string({ 
-        required_error: "Talla requerida" 
+    size: z.string({ 
+        required_error: "The size is required" 
     }),
     color: z.string({ 
-        required_error: "Color requerido" 
+        required_error: "The color is required" 
     }),
 });
 

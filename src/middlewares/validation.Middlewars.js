@@ -1,8 +1,8 @@
 // * ------ ✅ Función de Validación de Esquemas ✅ ------ *
 
-export const validacionEsquemas = (esquema) => (req, res, next) => {
+export const validationSchemas = (schema) => (req, res, next) => {
     try {
-        esquema.parse(req.body); 
+        schema.parse(req.body); 
         next(); 
     } catch (error) {
         
