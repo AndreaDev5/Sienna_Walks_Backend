@@ -8,7 +8,7 @@ import { upload } from '../middlewares/multerMiddlewares.js';
 const router = Router();
 
 // Rutas de autenticación
-router.post('/register', validationSchemas(schemaRegistry), registerUsers);
+router.post('/register',upload.single('imagen'),  validationSchemas(schemaRegistry), registerUsers);
 router.post('/login', validationSchemas(schemaLogin), loginUsers);
 router.post('/logout', logoutUsers);
 router.get('/profile', authRequired, profileUsers);
