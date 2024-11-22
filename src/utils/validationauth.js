@@ -23,6 +23,9 @@ export const schemaRegistry = z.object({
     cellphone: z.string({ 
         required_error: "The cellphone is required" 
     }),
+    city: z.string({ 
+        required_error: "The city is required" 
+    }),
     address: z.string({ 
         required_error: "The address is required" 
     }),

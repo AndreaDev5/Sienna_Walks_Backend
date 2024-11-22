@@ -28,6 +28,10 @@ const userSchema = new mongoose.Schema(
         type: String,
         required: [true, "The cellphone is required"],
     },
+    city: {
+        type: String, 
+        required: [true, "The city is required"],
+    },
     address: {
         type: String, 
         required: [true, "The address is required"],
