@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 
 // Registro de usuarios
 export const registerUsers = async (req, res) => {
-    const { name, lastname, email, password, cellphone, city, address, image } = req.body;
+    const { name, lastname, email, password, cellphone, city, address } = req.body;
 
     try {
         //Verificar que el correo no tenga otra cuenta
@@ -15,12 +15,24 @@ export const registerUsers = async (req, res) => {
         const hash = await bcrypt.hash(password, 10);
 
         // Verificamos si existe la URL y guardamos la URL de la imagen 
-       // let imageUrl = '';
-        //if (req.file) {
-        //  imageUrl = `/uploads/${req.file.filename}`; 
-        //}
-    
+      /*  let imageUrl = '';
+        if (req.file) {
+          imageUrl = `/uploads/${req.file.filename}`; 
+        }*/
+
         const newUsuario = new User({
+            name: req.body.name,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            password: hash,
+            cellphone: req.body.cellphone,
+            city: req.body.city,
+            address: req.body.address,
+            image: req.file ? `/uploads/${req.file.filename}` : '' // Si no hay imagen, guardamos un valor vacío
+
+        });
+         
+       /* const newUsuario = new User({
             name,
             lastname,
             email,
@@ -28,9 +40,9 @@ export const registerUsers = async (req, res) => {
             cellphone,
             city,
             address,
-            image: req.file.filename || ''
+            image: imageUrl
         });
-
+*/
         // Guardar el usuario
         const userSaved = await newUsuario.save();
 
