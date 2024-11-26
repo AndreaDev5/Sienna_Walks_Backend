@@ -1,99 +1,90 @@
 import Product from "../models/Product.js";
-import * as fs from 'fs' //Para eliminar las imagenes 
+import fs from "fs/promises";
 
-
-//Obtener productos
-export const getProduct = async (req, res) => {
-  const {size} = req.query;
+// Obtener todos los productos o un producto por ID (dependiendo de si se pasa el ID)
+export const getProducts = async (req, res) => {
+  const { size } = req.query; 
+  
   try {
-    //Almacena los id
-    const {id} = req.params
-    //Busca los productos de acuerdo al id y da una respuesta
-    if (id) {
-    const product = (id === undefined) ? await Product.find() : await Product.findById(id)
-    if (!product) {
-      return res.status(404).json({ status: false, message: 'Product not found' });
-  }
-    return res.status(200).json({status:true, data: product})
-}
-
- // Filtrar por talla
- const query = {};
- if (size) {
-     query.size = size; // Agregar el filtro de talla
- }
- // Buscar en la base de datos con el filtro
- const products = await Product.find(query);
- return res.status(200).json(products);
-  } catch (error) {
-    return res.status(500).json({ message: error.message });
-  }
-};
-
-//Crear productos 
-export const createProduct = async (req, res) => {
-  try {
-    // Crear una nueva instancia para crear un nuevo producto
-    const newProduct = new Product({
-        name: req.body.name, 
-        description : req.body.description,  
-        price: req.body.price, 
-        category: req.body.category, 
-        size: req.body.size, 
-        color: req.body.color, 
-        image: req.file.filename,
-      user: req.user.id,
-    });
-    await newProduct.save();
-    res.json(newProduct);
-  } catch (error) {
-    return res.status(500).json({ message: error.message });
-  }
-};
-
-//Eliminar producto
-export const deleteProduct = async (req, res) => {
-  try {
-    //Toma el id 
-    const {id} = req.params
-    //Busca el id, usa la función y elimina el producto
-    await  Product.findByIdAndDelete(req.params.id)
-    await deleteImage(id)
-    return res.status(200).json({message : "Delete product"})
-
-  } catch (error) {
-    return res.status(500).json({ message: error.message });
-  }
-};
-
-//Actualizar producto
-export const updateProduct = async (req, res) => {
- 
-  const {id} = req.params
-  const updatedata = ({
-    name: req.body.name, 
-    description : req.body.description,  
-    price: req.body.price, 
-    category: req.body.category, 
-    size: req.body.size, 
-    color: req.body.color, 
-    image: req.file ? req.file.filename : undefined
-  })
-  try {
-    const updateProduct = await Product.findByIdAndUpdate(id, updatedata, { new: true });
-    if (!updateProduct  ) {
-        return res.status(404).json({ message: 'Product not found' });
+    if (req.params.id) {
+      return getProductById(req, res); 
     }
 
-     res.json(updateProduct );
+    const query = size ? { size } : {}; // Si se pasa una talla, se filtra por ella
+    const products = await Product.find(query);
+    return res.status(200).json({ status: true, data: products });
   } catch (error) {
-    return res.status(500).json({ message: error.message });
+    return res.status(500).json({ status: false, message: error.message });
   }
 };
 
-//Función para eliminar las imagenes de la carpeta 
-const deleteImage = async(id) =>{
-  const deletei = await Product.findById(id)
-  const img =deletei.imagen
-  fs.unlinkSync('./uploads/'+img)
+// Obtener un producto específico por ID
+export const getProductById = async (req, res) => {
+  const { id } = req.params;
+  
+  try {
+    const product = await Product.findById(id);
+    if (!product) {
+      return res.status(404).json({ status: false, message: "Product not found" });
+    }
+    return res.status(200).json({ status: true, data: product });
+  } catch (error) {
+    return res.status(500).json({ status: false, message: error.message });
   }
+};
+
+// Crear un nuevo producto
+export const createProduct = async (req, res) => {
+  const { name, description, price, category, size, color } = req.body;
+  const image = req.file ? req.file.path : null; // Ruta de la imagen (si existe)
+
+  try {
+    const newProduct = new Product({ name, description, price, category, size, color, image });
+    await newProduct.save();
+    return res.status(201).json({ status: true, data: newProduct });
+  } catch (error) {
+    return res.status(500).json({ status: false, message: error.message });
+  }
+};
+
+// Eliminar un producto por ID
+export const deleteProduct = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const product = await Product.findByIdAndDelete(id);
+    if (!product) {
+      return res.status(404).json({ status: false, message: "Product not found" });
+    }
+
+    // Eliminar la imagen asociada al producto si existe
+    if (product.image) {
+      await fs.unlink(product.image);
+    }
+
+    return res.status(200).json({ status: true, message: "Product deleted successfully" });
+  } catch (error) {
+    return res.status(500).json({ status: false, message: error.message });
+  }
+};
+
+// Actualizar un producto por ID
+export const updateProduct = async (req, res) => {
+  const { id } = req.params;
+  const { name, description, price, category, size, color } = req.body;
+  const image = req.file ? req.file.path : undefined;
+
+  try {
+    const updatedData = { name, description, price, category, size, color };
+    if (image) updatedData.image = image;
+
+    const updatedProduct = await Product.findByIdAndUpdate(id, updatedData, { new: true });
+    if (!updatedProduct) {
+      return res.status(404).json({ status: false, message: "Product not found" });
+    }
+
+    return res.status(200).json({ status: true, data: updatedProduct });
+  } catch (error) {
+    return res.status(500).json({ status: false, message: error.message });
+  }
+};

@@ -1,47 +1,40 @@
-import mongoose from "mongoose"; 
+import mongoose from "mongoose";
 
-// * ------ 📦 Definición del Esquema del Producto 📦 ------ *
-
-const productSchema = new mongoose.Schema({
+// Definición del Esquema del Producto
+const productSchema = new mongoose.Schema(
+  {
     name: {
-        type: String,
-        required: [true, "The name is required"], 
+      type: String,
+      required: true,
     },
     description: {
-        type: String,
-        required: [true, "The description is required"], 
+      type: String,
+      required: true,
     },
     price: {
-        type: Number,
-        required: [true, "The price is required"], 
-        min: [0, "The price cannot be negative"], 
+      type: Number,
+      required: true,
+      min: 0,
     },
     category: {
-        type: String,
-        required: [true, "The category is required"], 
+      type: String,
+      required: true,
     },
     size: {
-        type: Number,
-        required: [true, "The size is required"], 
+      type: [Number], 
+      enum: [35, 36, 37, 38, 39], 
     },
     color: {
-        type: String,
-        required: [true, "The color is required"], 
+      type: String,
+      required: true,
     },
     image: {
-        type: String,
-        required: [true, "The image is required"], 
-        /*validate: {
-        validator: function(v) {
-                // 🌐 Validar que la imagen sea una URL válida
-                return /^(ftp|http|https):\/\/[^ "]+$/.test(v); 
-            },
-            message: props => `${props.value} no es una URL válida!` 
-        },*/
+      type: String,
+      required: true,
     },
-}, { timestamps: true }); 
+  },
+  { timestamps: true }
+);
 
-// * ------ 📦 Crear el Modelo de Producto 📦 ------ *
-
-const Product = mongoose.model("Product", productSchema); 
-export default Product; 
+const Product = mongoose.model("Product", productSchema);
+export default Product;

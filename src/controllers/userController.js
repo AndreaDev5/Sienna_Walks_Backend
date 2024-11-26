@@ -31,19 +31,6 @@ export const registerUsers = async (req, res) => {
             image: req.file ? req.file.filename : null // Si no hay imagen, guardamos un valor vacío
 
         });
-         
-       /* const newUsuario = new User({
-            name,
-            lastname,
-            email,
-            password: hash,
-            cellphone,
-            city,
-            address,
-            image: imageUrl
-        });
-*/
-        // Guardar el usuario
         const userSaved = await newUsuario.save();
 
         // Respuesta JSON
@@ -64,7 +51,6 @@ export const registerUsers = async (req, res) => {
 //Obtención de usuarios
 export const getUsers = async (req, res) => {
     try {
-      //Almacena los id
       const {id} = req.params
       //Busca los usuarios de acuerdo al id y da una respuesta
       const users = (id === undefined) ? await User.find() : await User.findById(id)
@@ -76,7 +62,7 @@ export const getUsers = async (req, res) => {
 
 //Actualizar usuarios
 export const updateUsers = async (req, res) => {
- 
+
     const {id} = req.params
     //Se obtienen los datos de acuerdo al id
     const updatedata = ({
@@ -91,17 +77,17 @@ export const updateUsers = async (req, res) => {
     })
     try {
         //Busca nuevamente el id y pasa los datos para actualizarlos
-      const updateusers = await User.findByIdAndUpdate(id, updatedata, { new: true });
-      if (!updateusers  ) {
-          return res.status(404).json({ message: 'User not found' });
-      }
-  
-       res.json(updateusers );
-    } catch (error) {
-      return res.status(500).json({ message: error.message });
+    const updateusers = await User.findByIdAndUpdate(id, updatedata, { new: true });
+    if (!updateusers  ) {
+        return res.status(404).json({ message: 'User not found' });
     }
-  };
-  
+
+    res.json(updateusers );
+    } catch (error) {
+    return res.status(500).json({ message: error.message });
+    }
+};
+
 
 
 // Login de usuarios
@@ -177,11 +163,11 @@ export const profileUsers = async (req, res) => {
 
 export const verifyUsers = async (req,res) =>{
     const {token} = req.cookies
-   
+  
     if (!token) return res.status(401).json({message: "unauthorized"});
     jwt.verify(token, "secret123", async (err, user) => {
       if (err) return res.status(401).json({message: "unauthorized"});
-   
+  
       const userFound = await User.findById(user.id)
       if(!userFound) return res.status(401).json({message: "unauthorized"});
 
