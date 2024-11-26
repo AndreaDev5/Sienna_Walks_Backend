@@ -1,0 +1,20 @@
+# 🛑 Ignorar la carpeta de dependencias de Node
+node_modules/
+
+# 🔐 Ignorar el archivo de variables de entorno (contiene datos sensibles)
+.env
+
+# 🖥️ Ignorar carpetas generadas por editores (VSCode, JetBrains, etc.)
+.vscode/
+.idea/
+
+# 📜 Ignorar archivos de log
+*.log
+
+# ⚙️ Ignorar archivos generados durante la compilación o producción
+dist/
+build/
+
+# 🧹 Ignorar archivos del sistema operativo (como configuraciones de macOS y Windows)
+.DS_Store
+Thumbs.db

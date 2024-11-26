@@ -9,9 +9,8 @@ const conectarDB = async () => {
         console.log("🌐 Conexión a la base de datos exitosa 🌐");
     } catch (error) {
         console.error("🚨 Error de conexión a la base de datos 🚨", error);
-        process.exit(1); 
+        process.exit(1);  
     }
 };
 
 export default conectarDB;
-
