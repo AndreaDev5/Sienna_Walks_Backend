@@ -15,10 +15,10 @@ export const registerUsers = async (req, res) => {
         const hash = await bcrypt.hash(password, 10);
 
         // Verificamos si existe la URL y guardamos la URL de la imagen 
-      /*  let imageUrl = '';
+        let imageUrl = '';
         if (req.file) {
-          imageUrl = `/uploads/${req.file.filename}`; 
-        }*/
+          imageUrl = `./uploads/${req.file.filename}`; 
+        }
 
         const newUsuario = new User({
             name: req.body.name,
@@ -28,7 +28,7 @@ export const registerUsers = async (req, res) => {
             cellphone: req.body.cellphone,
             city: req.body.city,
             address: req.body.address,
-            image: req.file ? `/uploads/${req.file.filename}` : '' // Si no hay imagen, guardamos un valor vacío
+            image: req.file ? req.file.filename : null // Si no hay imagen, guardamos un valor vacío
 
         });
          
@@ -120,7 +120,7 @@ export const loginUsers = async (req, res) => {
         // Generar token
         const token = await new Promise((resolve, reject) => {
             jwt.sign(
-                { id: userFound._id },
+                { id: userFound._id, role: userFound.email === 'admin@gmail.com' ? 'admin' : 'user'},
                 process.env.JWT_SECRET || "secret123",
                 { expiresIn: "1d" },
                 (err, token) => {

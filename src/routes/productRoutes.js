@@ -13,7 +13,7 @@ import { upload } from '../middlewares/multerMiddlewares.js';
 
 const router = Router();
 //Rutas para el crud de los productos
-router.get("/products", authRequired, getProduct);
+router.get("/products", getProduct);
 
 router.post("/products", authRequired, upload.single('imagen'), validationSchemas(schemaProduct), createProduct);
 
