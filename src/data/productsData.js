@@ -6,8 +6,7 @@ export const eclatEternel = [
         "price": 140000,
         "category": "Eclat Éternel",
         "size": [35, 36, 37, 38, 39],
-        "color":"#fffff",
-        "colorDescription": "Café Claro",
+        "color":"#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021426/5_vd404h.png"
     },
     {
@@ -16,7 +15,7 @@ export const eclatEternel = [
         "price": 150000,
         "category": "Eclat Éternel",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982397/Captura_de_pantalla_2024-11-18_205209_jrrocb.png"
     },
     {
@@ -25,7 +24,7 @@ export const eclatEternel = [
         "price": 130000,
         "category": "Eclat Éternel",
         "size": [36, 37, 38, 39],
-        "color": "Beige",
+        "color": "#E5BA73",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982330/Captura_de_pantalla_2024-11-18_204712_tzv0hn.png"
     },
     {
@@ -34,7 +33,7 @@ export const eclatEternel = [
         "price": 145000,
         "category": "Eclat Éternel",
         "size": [35, 36, 37, 38, 39],
-        "color": "Marrón",
+        "color": "#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731981635/7_qbjfvv.png"
     },
     {
@@ -43,7 +42,7 @@ export const eclatEternel = [
         "price": 160000,
         "category": "Eclat Éternel",
         "size": [36, 37, 38, 39],
-        "color": "Blanco",
+        "color": "#ffffff",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021444/19_bxefmx.png"
     },
     {
@@ -52,7 +51,7 @@ export const eclatEternel = [
         "price": 170000,
         "category": "Eclat Éternel",
         "size": [35, 36, 37, 38, 39],
-        "color": "Beige",
+        "color": "#E5BA73",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731981660/11_njdb5y.png"
     },
     {
@@ -61,7 +60,7 @@ export const eclatEternel = [
         "price": 155000,
         "category": "Eclat Éternel",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731981683/14_s2kweo.png"
     },
     {
@@ -70,7 +69,7 @@ export const eclatEternel = [
         "price": 140000,
         "category": "Eclat Éternel",
         "size": [36, 37, 38, 39],
-        "color": "Beige",
+        "color": "#E5BA73",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731981660/11_njdb5y.png"
     },
     {
@@ -79,7 +78,7 @@ export const eclatEternel = [
         "price": 150000,
         "category": "Eclat Éternel",
         "size": [35, 36, 37, 38, 39],
-        "color": "Marrón",
+        "color": "#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982305/Captura_de_pantalla_2024-11-18_204342_glb5ox.png"
     },
 
@@ -93,7 +92,7 @@ export const lauraMajestueuse = [
         "price": 170000,
         "category": "L'Aura Majestueuse",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982296/Captura_de_pantalla_2024-11-18_204244_u4izfa.png"
     },
     {
@@ -102,7 +101,7 @@ export const lauraMajestueuse = [
         "price": 160000,
         "category": "L'Aura Majestueuse",
         "size": [35, 36, 37, 38, 39],
-        "color": "Café Claro",
+        "color": "#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731981492/5_obsy0j.png"
     },
     {
@@ -111,7 +110,7 @@ export const lauraMajestueuse = [
         "price": 155000,
         "category": "L'Aura Majestueuse",
         "size": [36, 37, 38, 39],
-        "color": "Beige",
+        "color": "#E5BA73",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731981660/11_njdb5y.png"
     },
     {
@@ -120,7 +119,7 @@ export const lauraMajestueuse = [
         "price": 180000,
         "category": "L'Aura Majestueuse",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731981671/12_tlvnpl.png"
     },
     {
@@ -129,7 +128,7 @@ export const lauraMajestueuse = [
         "price": 165000,
         "category": "L'Aura Majestueuse",
         "size": [36, 37, 38, 39],
-        "color": "Beige",
+        "color": "#E5BA73",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982330/Captura_de_pantalla_2024-11-18_204712_tzv0hn.png"
     },
     {
@@ -138,7 +137,7 @@ export const lauraMajestueuse = [
         "price": 170000,
         "category": "L'Aura Majestueuse",
         "size": [35, 36, 37, 38, 39],
-        "color": "Café Oscuro",
+        "color": "#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731981492/5_obsy0j.png"
     },
     {
@@ -147,7 +146,7 @@ export const lauraMajestueuse = [
         "price": 175000,
         "category": "L'Aura Majestueuse",
         "size": [36, 37, 38, 39],
-        "color": "Blanco",
+        "color": "#ffffff",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731981679/13_w6zm2t.png"
     },
     {
@@ -156,7 +155,7 @@ export const lauraMajestueuse = [
         "price": 160000,
         "category": "L'Aura Majestueuse",
         "size": [35, 36, 37, 38, 39],
-        "color": "Café Claro",
+        "color": "#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731981635/7_qbjfvv.png"
     },
     {
@@ -165,7 +164,7 @@ export const lauraMajestueuse = [
         "price": 180000,
         "category": "L'Aura Majestueuse",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021444/20_qwexya.png"
     }
 ]
@@ -178,7 +177,7 @@ export const veloursDivin = [
         "price": 145000,
         "category": "Velours Divin",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021426/3_mobgvd.png"
     },
     {
@@ -187,7 +186,7 @@ export const veloursDivin = [
         "price": 150000,
         "category": "Velours Divin",
         "size": [35, 36, 37, 38, 39],
-        "color": "Café Claro",
+        "color": "#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021426/5_vd404h.png"
     },
     {
@@ -196,7 +195,7 @@ export const veloursDivin = [
         "price": 140000,
         "category": "Velours Divin",
         "size": [36, 37, 38, 39],
-        "color": "Beige",
+        "color": "#E5BA73",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021435/11_gtgnil.png"
     },
     {
@@ -205,7 +204,7 @@ export const veloursDivin = [
         "price": 155000,
         "category": "Velours Divin",
         "size": [35, 36, 37, 38, 39],
-        "color": "Marrón",
+        "color": "#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021426/7_rpeshp.png"
     },
     {
@@ -214,7 +213,7 @@ export const veloursDivin = [
         "price": 165000,
         "category": "Velours Divin",
         "size": [36, 37, 38, 39],
-        "color": "Blanco",
+        "color": "#ffffff",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021437/13_swq0zp.png"
     },
     {
@@ -223,7 +222,7 @@ export const veloursDivin = [
         "price": 160000,
         "category": "Velours Divin",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021440/15_uvy3wc.png"
     },
     {
@@ -232,7 +231,7 @@ export const veloursDivin = [
         "price": 150000,
         "category": "Velours Divin",
         "size": [35, 36, 37, 38, 39],
-        "color": "Beige",
+        "color": "#E5BA73",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021435/11_gtgnil.png"
     },
     {
@@ -241,7 +240,7 @@ export const veloursDivin = [
         "price": 155000,
         "category": "Velours Divin",
         "size": [35, 36, 37, 38, 39],
-        "color": "Café Oscuro",
+        "color": "#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021426/7_rpeshp.png"
     },
     {
@@ -250,7 +249,7 @@ export const veloursDivin = [
         "price": 140000,
         "category": "Velours Divin",
         "size": [36, 37, 38, 39],
-        "color": "Blanco",
+        "color": "#ffffff",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021444/19_bxefmx.png"
     }
 ]
@@ -263,25 +262,25 @@ export const heritageDor = [
         "price": 170000,
         "category": "Héritage d'Or",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021455/32_l6trmr.png"
     },
     {
-        "name": "Bota Imperial Café Claro",
+        "name": "Bota Imperial Negro",
         "description": "Bota Imperial en color café claro, con detalles dorados que reflejan lujo y distinción. Ideal para quienes buscan un estilo único y sofisticado.",
         "price": 175000,
         "category": "Héritage d'Or",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021449/26_dol6pv.png"
     },
     {
-        "name": "Bota Dorada Beige",
+        "name": "Bota Dorada Negro",
         "description": "Bota Dorada en color beige, con detalles sutiles en dorado. Un modelo que combina elegancia y modernidad, perfecto para complementar cualquier atuendo de gala o semi-formal.",
         "price": 180000,
         "category": "Héritage d'Or",
         "size": [36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021449/28_b7lekj.png"
     },
     {
@@ -290,7 +289,7 @@ export const heritageDor = [
         "price": 185000,
         "category": "Héritage d'Or",
         "size": [35, 36, 37, 38, 39],
-        "color": "Marrón",
+        "color": "#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982305/Captura_de_pantalla_2024-11-18_204342_glb5ox.png"
     },
     {
@@ -299,7 +298,7 @@ export const heritageDor = [
         "price": 190000,
         "category": "Héritage d'Or",
         "size": [36, 37, 38, 39],
-        "color": "Blanco",
+        "color": "#ffffff",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982121/19_woehe9.png"
     },
     {
@@ -308,7 +307,7 @@ export const heritageDor = [
         "price": 195000,
         "category": "Héritage d'Or",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021454/30_e1zy2d.png"
     },
     {
@@ -317,7 +316,7 @@ export const heritageDor = [
         "price": 180000,
         "category": "Héritage d'Or",
         "size": [35, 36, 37, 38, 39],
-        "color": "Beige",
+        "color": "#E5BA73",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021435/11_gtgnil.png"
     },
     {
@@ -326,7 +325,7 @@ export const heritageDor = [
         "price": 185000,
         "category": "Héritage d'Or",
         "size": [35, 36, 37, 38, 39],
-        "color": "Café Oscuro",
+        "color": "#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021426/5_vd404h.png"
     }
 ]
@@ -339,7 +338,7 @@ export const opulenceSauvage = [
         "price": 190000,
         "category": "Opulence Sauvage",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021445/23_sl3vpq.png"
     },
     {
@@ -348,7 +347,7 @@ export const opulenceSauvage = [
         "price": 200000,
         "category": "Opulence Sauvage",
         "size": [35, 36, 37, 38, 39],
-        "color": "Café Oscuro",
+        "color": "#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731981492/5_obsy0j.png"
     },
     {
@@ -357,7 +356,7 @@ export const opulenceSauvage = [
         "price": 210000,
         "category": "Opulence Sauvage",
         "size": [36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021448/24_fhnj5s.png"
     },
     {
@@ -366,7 +365,7 @@ export const opulenceSauvage = [
         "price": 215000,
         "category": "Opulence Sauvage",
         "size": [36, 37, 38, 39],
-        "color": "Blanco",
+        "color": "#ffffff",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021444/19_bxefmx.png"
     },
     {
@@ -375,7 +374,7 @@ export const opulenceSauvage = [
         "price": 220000,
         "category": "Opulence Sauvage",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021441/17_mxo1lt.png"
     },
     {
@@ -384,7 +383,7 @@ export const opulenceSauvage = [
         "price": 225000,
         "category": "Opulence Sauvage",
         "size": [36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021425/1_in5gk6.png"
     },
     {
@@ -393,7 +392,7 @@ export const opulenceSauvage = [
         "price": 230000,
         "category": "Opulence Sauvage",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021426/4_yedlyj.png"
     },
     {
@@ -402,7 +401,7 @@ export const opulenceSauvage = [
         "price": 235000,
         "category": "Opulence Sauvage",
         "size": [36, 37, 38, 39],
-        "color": "Vino",
+        "color": "#BA0F0F",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982367/Captura_de_pantalla_2024-11-18_205006_sdwuoe.png"
     }
 ]
@@ -415,7 +414,7 @@ export const noirElegance = [
         "price": 210000,
         "category": "Noir Élégance",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982432/Captura_de_pantalla_2024-11-18_205418_ypdplo.png"
     },
     {
@@ -424,7 +423,7 @@ export const noirElegance = [
         "price": 215000,
         "category": "Noir Élégance",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982437/Captura_de_pantalla_2024-11-18_205434_u1u5iq.png"
     },
     {
@@ -433,7 +432,7 @@ export const noirElegance = [
         "price": 220000,
         "category": "Noir Élégance",
         "size": [36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982401/Captura_de_pantalla_2024-11-18_205228_dwxte2.png"
     },
     {
@@ -442,7 +441,7 @@ export const noirElegance = [
         "price": 225000,
         "category": "Noir Élégance",
         "size": [36, 37, 38, 39],
-        "color": "Blanco",
+        "color": "#ffffff",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982356/Captura_de_pantalla_2024-11-18_204950_zhmvdh.png"
     },
     {
@@ -451,7 +450,7 @@ export const noirElegance = [
         "price": 230000,
         "category": "Noir Élégance",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982371/Captura_de_pantalla_2024-11-18_205032_vr85n6.png"
     },
     {
@@ -460,7 +459,7 @@ export const noirElegance = [
         "price": 235000,
         "category": "Noir Élégance",
         "size": [36, 37, 38, 39],
-        "color": "Café Claro",
+        "color": "#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982305/Captura_de_pantalla_2024-11-18_204342_glb5ox.png"
     },
     {
@@ -469,7 +468,7 @@ export const noirElegance = [
         "price": 240000,
         "category": "Noir Élégance",
         "size": [35, 36, 37, 38, 39],
-        "color": "Beige",
+        "color": "#E5BA73",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021435/11_gtgnil.png"
     },
     {
@@ -478,7 +477,7 @@ export const noirElegance = [
         "price": 245000,
         "category": "Noir Élégance",
         "size": [36, 37, 38, 39],
-        "color": "Blanco",
+        "color": "#ffffff",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021437/13_swq0zp.png"
     }
 ]
@@ -491,7 +490,7 @@ export const cielDeMinuit = [
         "price": 250000,
         "category": "Ciel de Minuit",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021435/10_t3mzob.png"
     },
     {
@@ -500,7 +499,7 @@ export const cielDeMinuit = [
         "price": 255000,
         "category": "Ciel de Minuit",
         "size": [35, 36, 37, 38, 39],
-        "color": "Café",
+        "color": "#C58940",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021426/7_rpeshp.png"
     },
     {
@@ -509,7 +508,7 @@ export const cielDeMinuit = [
         "price": 260000,
         "category": "Ciel de Minuit",
         "size": [36, 37, 38, 39],
-        "color": "Blanco",
+        "color": "#ffffff",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021437/13_swq0zp.png"
     },
     {
@@ -518,7 +517,7 @@ export const cielDeMinuit = [
         "price": 265000,
         "category": "Ciel de Minuit",
         "size": [35, 36, 37, 38],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021435/9_heslt9.png"
     },
     {
@@ -527,7 +526,7 @@ export const cielDeMinuit = [
         "price": 270000,
         "category": "Ciel de Minuit",
         "size": [35, 36, 37, 38, 39],
-        "color": "Vino",
+        "color": "#BA0F0F",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731981627/6_y8orb4.png"
     },
     {
@@ -536,7 +535,7 @@ export const cielDeMinuit = [
         "price": 275000,
         "category": "Ciel de Minuit",
         "size": [36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731981855/16_e1zrph.png"
     },
     {
@@ -545,7 +544,7 @@ export const cielDeMinuit = [
         "price": 280000,
         "category": "Ciel de Minuit",
         "size": [35, 36, 37, 38],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982038/17_z6qusc.png"
     },
     {
@@ -554,7 +553,7 @@ export const cielDeMinuit = [
         "price": 285000,
         "category": "Ciel de Minuit",
         "size": [35, 36, 37, 38, 39],
-        "color": "Negro",
+        "color": "#000000",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731982227/22_fcjtyj.png"
     }
 ]
