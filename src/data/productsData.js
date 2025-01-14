@@ -6,7 +6,8 @@ export const eclatEternel = [
         "price": 140000,
         "category": "Eclat Éternel",
         "size": [35, 36, 37, 38, 39],
-        "color": "Café Claro",
+        "color":"#fffff",
+        "colorDescription": "Café Claro",
         "image": "https://res.cloudinary.com/dsf9nnai5/image/upload/v1731021426/5_vd404h.png"
     },
     {
